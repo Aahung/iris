@@ -2,6 +2,11 @@
 Iris
 ====
 
+Notice
+------------
+
+This is a forked repository for [my blog](https://blog.xinhong.me). 
+
 What is iris?
 -------------
 
@@ -53,7 +58,7 @@ To install, go to your pelican theme directory and clone the repo. For
 example::
     
     $ cd /home/slok/.virtualenvs/blog/lib/python2.7/site-packages/pelican/themes/
-    $ git clone https://github.com/slok/iris.git
+    $ git clone https://github.com/Aahung/iris.git
 
 Set the variable ``THEME`` to ``iris`` in your pelican settings, like this::
 

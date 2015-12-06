@@ -18,6 +18,10 @@
         <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
         {% endif %}
 
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+        {% endif %}
+
         <!-- Javascript-->
         <script async src="{{ SITEURL }}/theme/js/jquery-1.11.3.min.js"></script>
         <script async type="text/javascript"> 
@@ -50,10 +54,10 @@
     {% block navigation %}
      <div class="navigation">
         <ol class="nav">
-          <li class="current"><a href="{{ SITEURL }}">Blog</a> </li>
-          <li><a href="{{ SITEURL }}/archives.html">Archive</a></li>
-          <li><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
-          <li><a href="{{ SITEURL }}/{{ FEED_RSS }}">RSS</a> </li>
+          <li {% if current_blog %}class="current"{% endif %}><a href="{{ SITEURL }}/">Blog</a> </li>
+          <li {% if current_archive %}class="current"{% endif %}><a href="{{ SITEURL }}/archives.html">Archive</a></li>
+          <li {% if current_tags %}class="current"{% endif %}><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
+          <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Subscribe</a> </li>
         </ol>
       </div>
     {% endblock navigation %}
